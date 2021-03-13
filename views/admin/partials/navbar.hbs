@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {{#if isCategories}}
+            <li class="nav-item active">
+            {{else}}
+            <li class="nav-item">
+            {{/if}}
+                <a class="nav-link" href="/about">Categories</a>
+            </li>
+            {{#if isProducts}}
+            <li class="nav-item active">
+            {{else}}
+            <li class="nav-item">
+            {{/if}}
+                <a class="nav-link" href="/contacts">Products</a>
+            </li>
+            {{#if isOrders}}
+            <li class="nav-item active">
+            {{else}}
+            <li class="nav-item">
+            {{/if}}
+            <a class="nav-link" href="/contacts">Orders</a>
+        </li>
+        </ul>
+        <a type="button" class="btn btn-primary m-2" href="#">Log In</a>
+        <a type="button" class="btn btn-primary m-2" href="#">Market</a>
+    </div>
+</nav>

@@ -1,0 +1,17 @@
+<div class = "row">
+    {{#each products}}
+    <div class ="col-4">
+        <div class="card m-1">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href = "/{{category_id}}/{{id}}">{{ title }}</a>
+                </h5>
+                <div class="card-img" style="background-image: url({{ image }})"></div>
+                <p class="card-text">{{ description }}</p>
+                <p class="card-text">{{ cost }}</p>
+                <button class="btn btn-primary">В корзину</button>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
