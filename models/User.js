@@ -1,5 +1,9 @@
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('mysql2')
+const sequelize = new Sequelize ('market', 'root', '', {
+    host: 'localhost',
+    dialect: "mysql"
+})
+
 
 const User = sequelize.define ('user', {
     id: {
@@ -10,7 +14,7 @@ const User = sequelize.define ('user', {
     },
     name: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
     },
     email: {
         type: Sequelize.STRING,
@@ -20,6 +24,15 @@ const User = sequelize.define ('user', {
         type: Sequelize.TEXT,
         allowNull: false
     },
+    isAdmin: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    }
 })
 
-module.exports = sequelize.models.User
+User.sync()
+    .then(r => console.log(r))
+    .catch(err => console.log(err))
+
+module.exports = User

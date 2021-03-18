@@ -1,5 +1,9 @@
 const Sequelize = require('sequelize')
-const sequelize = new Sequelize('mysql2')
+const sequelize = new Sequelize ('market', 'root', '', {
+    host: 'localhost',
+    dialect: "mysql"
+})
+
 
 const Image = sequelize.define ('image', {
     id: {

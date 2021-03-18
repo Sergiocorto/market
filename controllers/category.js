@@ -2,8 +2,6 @@ const model = require('../models/Category')
 
 module.exports.getAll = async (req, res) => {
     const categories = await model.findAll({raw: true})
-        .then(console.log('Getting all categories'))
-        .catch(err => console.log(err))
 
     if(req.baseUrl.includes('admin')){
         res.render('admin/category', {categories})
@@ -17,11 +15,14 @@ module.exports.getById = function (req, res) {
 }
 
 module.exports.create = async function (req, res) {
-    await model.create({
-        name: req.body.category
+    const [category, created] = await model.findOrCreate({
+        where: {name: req.body.category}
     })
-        .then(this.getAll())
-        .catch(err => console.log(err))
+    if (created){
+        res.status(200).redirect('/admin/category')
+    }else{
+        res.status(409).json({massage: 'Такая категория уже существует'})
+    }
 }
 
 module.exports.update = function (req, res) {

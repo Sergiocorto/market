@@ -8,8 +8,6 @@ module.exports.getByCategory = async function (req, res) {
         },
         raw: true
     })
-        .then(console.log('Getting products'))
-        .catch(err => console.log(err))
 
     if(req.baseUrl.includes('admin')){
         res.render('admin/products', {products})
