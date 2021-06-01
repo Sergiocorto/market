@@ -1,0 +1,22 @@
+
+    {{#each products}}
+    <div class ="col-4">
+        <div class="card m-1">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href = "/product/:{{category_id}}/:{{id}}">{{ title }}</a>
+                </h5>
+                <img src="/uploads/{{ image }}" class="card-img-top card-img" alt="...">
+                <p class="card-text">{{ description }}</p>
+                <p class="cost card-text">{{ cost }}</p>
+                {{#if @root.isAuth}}
+                <form action = "/order/addToBasket" method="post">
+                    <input type="hidden" name="count" value="1">
+                    <input type="hidden" name="id" value="{{id}}">
+                    <button type="submit" class="btn btn-primary">В корзину</button>
+                </form>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    {{/each}}

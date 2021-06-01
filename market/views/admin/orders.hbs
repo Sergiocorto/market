@@ -1,0 +1,47 @@
+ <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card strpied-tabled-with-hover">
+                <div class="card-header ">
+                    <h4 class="card-title">Orders</h4>
+                </div>
+                <div class="card-body table-full-width table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <th>ID</th>
+                            <th>User ID</th>
+                            <th>Products Info</th>
+                            <th>Status</th>
+                        </thead>
+                        <tbody>
+                            {{#each orders}}
+                                    <tr>
+                                        <td name="order_id"> {{id}} </td>
+                                        <td> {{userId}} </td>
+                                         <td>
+                                        {{#each basket}}
+                                            <span>{{title}} - {{count}}шт. -{{totalCost}}грн.</span></br>
+                                        {{/each}}
+                                        </td>
+                                        <td>
+                                            <p>{{status}}</p>
+                                            <form action="/order/update" method="POST">
+                                                <input type="hidden" name="id" value="{{id}}">
+                                                <select class="form-control" name="status" onchange="btnUnblock(this)">
+                                                    <option value = 'new'>new</option>
+                                                    <option value = 'отправлен покупателю'>отправлен покупателю</option>
+                                                </select>
+                                                <button type="submit" class="btn btn-success btnRefresh" disabled>Refresh Order</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                

@@ -1,0 +1,15 @@
+ <div class = "card">
+    <div class="card-body">
+        <h5 class="card-title">
+            {{title}}
+        </h5>
+        <image class="img" src="/uploads/{{product.image}}"></image>        
+        <p class="card-text">{{product.description}}</p>
+        <h1 class="card-text cost">{{product.cost}}</h1>
+        <form action = "/order/addToBasket" method="post">
+            <input type="hidden" name="count" value="1">
+            <input type="hidden" name="id" value="{{product.id}}">
+            <button type="submit" class="btn btn-primary">В корзину</button>
+        </form>
+    </div>
+</div>

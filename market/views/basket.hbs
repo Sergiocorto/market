@@ -1,0 +1,38 @@
+<div class="col-9">
+    <div class = "container">
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Count</th>
+                <th scope="col">Cost</th>
+                <th scope="col"> Total Cost</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each positions}}
+                <tr>
+                    <td>{{title}}</td>
+                    <td>{{count}}</td>
+                    <td>{{cost}}</td>
+                    <td>{{totalCost}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="order" action = "/order" method = "POST">
+                                <input name = "id" type="hidden" class="form-control" value="{{user.id}}">
+                                <button name = "submit" type="submit" class="btn btn-success btn-fill pull-right">Confirm Order</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

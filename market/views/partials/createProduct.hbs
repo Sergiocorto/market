@@ -1,0 +1,54 @@
+<div class="modal fade" id="exampleCreate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form id="add_product" action = "/admin/product" method = "post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-9 pr-1">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input name = "title" type="text" class="form-control" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 pr-1">
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea name = "description" type="text" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Cost</label>
+                                <input name = "cost" type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Images</label>
+                                <input name = "image" type="file" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <input name = "categoryId" type="hidden" class="form-control" value="{{catId}}">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button name ="submit" type="submit" class="btn btn-primary">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

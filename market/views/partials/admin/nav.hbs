@@ -1,0 +1,26 @@
+<ul class="nav">
+    <li class="nav-item">
+        <a class="nav-link" href="/admin/category">
+            <p>General</p>
+        </a>
+    </li>
+    <li class = "nav-item">
+        {{#if isOrders}}
+        <a class="nav-link table-active" href="/admin/orders"><p>Orders</p></a>
+        {{else}}
+        <a class="nav-link " href="/admin/order"><p>Orders</p></a>
+        {{/if}}
+    </li>
+    <li class = "nav-item">
+        {{#if isCategories}}
+        <a class="nav-link table-active" href="/admin/category"><p>Categories</p></a>
+        {{else}}
+        <a class="nav-link" href="/admin/category"><p>Categories</p></a>
+        {{/if}}
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/">
+            <p>Log out</p>
+        </a>
+    </li>
+</ul>

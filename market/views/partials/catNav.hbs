@@ -1,0 +1,8 @@
+<div class="col-2">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link " href = "/">Все</a>
+        {{#each categories}}
+        <a class="nav-link" href = "/product/:{{id}}">{{name}}</a>
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {{#if isAbout}}
+            <li class="nav-item active">
+            {{else}}
+            <li class="nav-item">
+            {{/if}}
+            <a class="nav-link" href="/info/about">About</a>
+        </li>
+            {{#if isContacts}}
+            <li class="nav-item active">
+            {{else}}
+            <li class="nav-item">
+            {{/if}}
+            <a class="nav-link" href="/info/contacts">Contacts</a>
+        </li>
+        </ul>
+        {{#if isAdmin}}
+            <a type="button" class="btn btn-primary m-2" href="/admin/category">Admin Panel</a>
+        {{/if}}
+        {{#if isAuth}}
+            <a type="button" class="btn btn-primary m-2" href="/order/:{{userId}}">My Orders</a>
+            <a type="button" class="btn btn-primary m-2" href="/order/basket">Basket <span>{{inBasket}}</span></a>
+            <a type="button" class="btn btn-primary m-2" href="/auth/logout">Log Out</a>
+        {{else}}
+            <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalLogin"> Log In</button>
+            <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModalRegistration">Registration</button>
+        {{/if}}
+    </div>
+</nav>
