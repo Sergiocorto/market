@@ -18,6 +18,13 @@
         <a class="nav-link" href="/admin/category"><p>Categories</p></a>
         {{/if}}
     </li>
+    <li class = "nav-item">
+        {{#if isProducts}}
+            <a class="nav-link table-active" href="/admin/product"><p>Products</p></a>
+        {{else}}
+            <a class="nav-link" href="/admin/product"><p>Products</p></a>
+        {{/if}}
+    </li>
     <li class="nav-item">
         <a class="nav-link" href="/">
             <p>Log out</p>

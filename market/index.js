@@ -7,7 +7,6 @@ const morgan = require('morgan')('dev')
 const path = require('path')
 const variables = require('./middleware/variables')
 const checkIsAdmin = require('./middleware/checkIsAdmin')
-
 const authRouter = require('./routes/auth')
 const orderRouter = require('./routes/order')
 const productRouter = require('./routes/product')
